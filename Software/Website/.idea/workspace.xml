@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0e4cc86-a302-43d0-bccd-8801b0d87b2b" name="Default Changelist" comment="" />
+    <list default="true" id="e0e4cc86-a302-43d0-bccd-8801b0d87b2b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +31,8 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/compressed.html" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -62,7 +67,11 @@
       <option name="presentableId" value="Default" />
       <updated>1571264341015</updated>
       <workItem from="1571264342191" duration="318000" />
-      <workItem from="1571302170217" duration="14511000" />
+      <workItem from="1571302170217" duration="15410000" />
+      <workItem from="1571324516227" duration="1428000" />
+      <workItem from="1571741566449" duration="756000" />
+      <workItem from="1571831318795" duration="1799000" />
+      <workItem from="1571949087231" duration="755000" />
     </task>
     <servers />
   </component>
