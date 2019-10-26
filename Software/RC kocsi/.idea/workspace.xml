@@ -9,7 +9,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51c18bdc-cdeb-4adb-8899-a4753c936458" name="Default Changelist" comment="" />
+    <list default="true" id="51c18bdc-cdeb-4adb-8899-a4753c936458" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/wifi-control.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config.h" beforeDir="false" afterPath="$PROJECT_DIR$/server/config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/data/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/data/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/filesystem.h" beforeDir="false" afterPath="$PROJECT_DIR$/server/filesystem.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/moving.h" beforeDir="false" afterPath="$PROJECT_DIR$/server/moving.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.ino" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/sonic.h" beforeDir="false" afterPath="$PROJECT_DIR$/server/sonic.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/website.h" beforeDir="false" afterPath="$PROJECT_DIR$/server/website.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website.h" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +30,18 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1SYKIZppKV4p6sv5TKz2FHff6MR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/server" />
     <property name="settings.editor.selected.configurable" value="ESP32.plugin.achdjian.it" />
@@ -55,10 +76,33 @@
       <workItem from="1571735011042" duration="2819000" />
       <workItem from="1571741781535" duration="3351000" />
       <workItem from="1571829679256" duration="6363000" />
+      <workItem from="1571953376087" duration="420000" />
+      <workItem from="1572017076249" duration="4906000" />
+      <workItem from="1572118293755" duration="1559000" />
+      <workItem from="1572120240960" duration="42000" />
+      <workItem from="1572121262678" duration="191000" />
+      <workItem from="1572121502860" duration="1190000" />
+      <workItem from="1572122966703" duration="39000" />
+      <workItem from="1572123097815" duration="511000" />
+      <workItem from="1572124348813" duration="18000" />
+      <workItem from="1572124485713" duration="94000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
