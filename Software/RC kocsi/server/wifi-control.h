@@ -11,7 +11,7 @@
 void wifi_setup()
 {
     WiFi.softAP(ssid, password);
-    WiFi.softAPConfig(local_ip, gateway, subnet);
+    WiFi.softAPConfig(local_ip_server, gateway, subnet);
     MDNS.begin(host);
     Serial.print("Open http://");
     Serial.print(host);

@@ -8,16 +8,16 @@
 #include "config.h"
 #include <String.h>
 
-Ultrasonic front_ultrasonic(ultrasonic_trigg, front_ultrasonic_echo);
+//Ultrasonic front_ultrasonic(ultrasonic_trigg, front_ultrasonic_echo);
 
 String getFrontSensorStringDistance()
 {
   
-    return ""+String(front_ultrasonic.read());
+    return ""+100;
 }
 double getDistance()
 {
-    return  front_ultrasonic.read();
+    return  100;
 }
 
 
