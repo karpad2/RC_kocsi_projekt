@@ -9,6 +9,7 @@
 const char* ssid = "RC-kocsi";  // Enter SSID here
 const char* password = "12345678";  //Enter Password here
 const char* host = "RC-kocsi";
+const char* ok="[OK]";
 /* Put IP Address details */
 IPAddress local_ip_server(192,168,1,1);
 IPAddress local_ip_camera(192,168,1,200);

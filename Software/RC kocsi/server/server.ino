@@ -15,20 +15,20 @@ void setup(void) {
     Serial.print("\n Filesystem:");
     check_fs();
     //WIFI INIT
-    Serial.println("[OK]");
+    Serial.println(ok);
     Serial.print("Wifi:");
     wifi_setup();
-    Serial.println("[OK]");
+    Serial.println(ok);
     //SERVER INIT
     Serial.print("Website:");
     website_setup();
-    Serial.println("[OK]");
+    Serial.println(ok);
     Serial.print("Server:");
     server.begin();
-    Serial.println("[OK]");
+    Serial.println(ok);
     Serial.print("Moving:");
     moving_setup();
-    Serial.println("[OK]");
+    Serial.println(ok);
     Serial.println("System started!");
 }
 void loop(void) {

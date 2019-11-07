@@ -4,7 +4,6 @@
 
 #ifndef RC_KOCSI_SONIC_H
 #define RC_KOCSI_SONIC_H
-#include <Ultrasonic.h>
 #include "config.h"
 #include <String.h>
 
