@@ -10,9 +10,9 @@ const char* ssid = "RC-kocsi";  // Enter SSID here
 const char* password = "12345678";  //Enter Password here
 const char* host = "RC-kocsi";
 /* Put IP Address details */
-IPAddress local_ip_server(192,168,5,1);
-IPAddress local_ip_camera(192,168,5,200);
-IPAddress gateway(192,168,5,1);
+IPAddress local_ip_server(192,168,1,1);
+IPAddress local_ip_camera(192,168,1,200);
+IPAddress gateway(192,168,1,1);
 IPAddress subnet(255,255,255,0);
 
 int steering=90;
@@ -24,7 +24,7 @@ int motor_pin1=16;
 int motor_pin2=17;
 int motor_speed_k=10;
 int front_ultrasonic_echo=11;
-int ultrasonic_trigg=12;
+int ultrasonic_trigg=13;
 int min_of_steering=75;
 int steering_dist=37;
 int max_of_steering=min_of_steering+steering_dist;
