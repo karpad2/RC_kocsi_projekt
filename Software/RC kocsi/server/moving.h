@@ -5,13 +5,11 @@
 
 #ifndef RC_KOCSI_MOVING_H
 #define RC_KOCSI_MOVING_H
-#define COUNT_LOW 0
+
  #define FREQ 30000
  #define RESOLUTION 8
-//#include <ESP32_Servo.h>
-//#include <analogWrite.h>
+
 #include "config.h"
-//#include "website.h"
 #include "src/Servo.h"
 int myspeed=0,previous_speed=0;
 int abs_speed;
