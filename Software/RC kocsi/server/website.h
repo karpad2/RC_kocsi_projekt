@@ -61,7 +61,7 @@ void website_setup()
             steering=s_steering.toInt();
             speed=s_speed.toInt();
             String json = "{";
-            json += "\"distance\":" +getFrontSensorStringDistance();
+            json += "'distance':100";
             json += "}";
             server.send(200, "text/json", json);
             json = String();

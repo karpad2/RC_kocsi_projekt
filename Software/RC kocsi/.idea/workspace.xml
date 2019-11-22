@@ -11,12 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="51c18bdc-cdeb-4adb-8899-a4753c936458" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config.h" beforeDir="false" afterPath="$PROJECT_DIR$/server/config.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/data/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/data/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/moving.h" beforeDir="false" afterPath="$PROJECT_DIR$/server/moving.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.ino" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/sonic.h" beforeDir="false" afterPath="$PROJECT_DIR$/server/sonic.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/wifi-control.h" beforeDir="false" afterPath="$PROJECT_DIR$/server/wifi-control.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/website.h" beforeDir="false" afterPath="$PROJECT_DIR$/server/website.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +87,7 @@
       <workItem from="1572455083525" duration="1091000" />
       <workItem from="1572508096868" duration="1639000" />
       <workItem from="1572519585423" duration="3405000" />
-      <workItem from="1572523268689" duration="1281000" />
+      <workItem from="1572523268689" duration="3357000" />
     </task>
     <servers />
   </component>
