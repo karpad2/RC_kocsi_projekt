@@ -6,17 +6,15 @@
 #define RC_KOCSI_WIFI_CONTROL_H
 
 #include <WiFi.h>
+#include <WiFiAP.h>
+
 #include "config.h"
 
-void wifi_setup()
-{
-    WiFi.softAP(ssid, password);
-    WiFi.softAPConfig(local_ip_server, gateway, subnet);
-    MDNS.begin(host);
-    Serial.print("Open http://");
-    Serial.print(host);
-    Serial.println(".local/edit to see the file browser");
-}
+WiFiServer wserver(8080);
 
+void client_management()
+{
+
+}
 
 #endif //RC_KOCSI_WIFI_CONTROL_H

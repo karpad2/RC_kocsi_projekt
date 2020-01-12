@@ -7,75 +7,45 @@
 #include <WebServer.h>
 #include "config.h"
 #include "sonic.h"
+#include "filesystem.h"
 
 
 WebServer server(webPort);
 
-
-void handleFileList();
-void handleFileUpload();
-bool handleFileRead(String path);
-void handleFileDelete();
-void handleFileCreate();
-String getContentType(String filename);
-
-void website_setup()
-{
-    server.on("/list", HTTP_GET, handleFileList);
-    //load editor
-    server.on("/edit", HTTP_GET, []() {
-        if (!handleFileRead("/edit.htm")) {
-            server.send(404, "text/plain", "FileNotFound");
-        }
-    });
-    //create file
-    server.on("/edit", HTTP_PUT, handleFileCreate);
-    //delete file
-    server.on("/edit", HTTP_DELETE, handleFileDelete);
-    //first callback is called after the request has ended with all parsed arguments
-    //second callback handles file uploads at that location
-    server.on("/edit", HTTP_POST, []() {
-        server.send(200, "text/plain", "");
-    }, handleFileUpload);
-
-    server.onNotFound([]() {
-        if (!handleFileRead(server.uri())) {
-            server.send(404, "text/plain", "FileNotFound");
-        }
-    });
-
-    //get heap status, analog input value and all GPIO statuses in one json call
-    server.on("/all", HTTP_GET, []() {
-        String json = "{";
-        json += "\"heap\":" + String(ESP.getFreeHeap());
-        json += ", \"analog\":" + String(analogRead(A0));
-        json += ", \"gpio\":" + String((uint32_t)(0));
-        json += "}";
-        server.send(200, "text/json", json);
-        json = String();
-    });
-    server.on("/moving", HTTP_GET, []() {
-        if(server.hasArg("steering") && server.hasArg("speed"))
-        {
-            String s_steering=server.arg("steering"),s_speed=server.arg("speed");
-            steering=s_steering.toInt();
-            speed=s_speed.toInt();
-            String json = "{";
-            json += "'distance':100";
-            json += "}";
-            server.send(200, "text/json", json);
-            json = String();
-        }
-
-
-    });
-
+String getContentType(String filename) {
+    if (server.hasArg("download")) {
+        return "application/octet-stream";
+    } else if (filename.endsWith(".htm")) {
+        return "text/html";
+    } else if (filename.endsWith(".html")) {
+        return "text/html";
+    } else if (filename.endsWith(".css")) {
+        return "text/css";
+    } else if (filename.endsWith(".js")) {
+        return "application/javascript";
+    } else if (filename.endsWith(".png")) {
+        return "image/png";
+    } else if (filename.endsWith(".gif")) {
+        return "image/gif";
+    } else if (filename.endsWith(".jpg")) {
+        return "image/jpeg";
+    } else if (filename.endsWith(".ico")) {
+        return "image/x-icon";
+    } else if (filename.endsWith(".xml")) {
+        return "text/xml";
+    } else if (filename.endsWith(".pdf")) {
+        return "application/x-pdf";
+    } else if (filename.endsWith(".zip")) {
+        return "application/x-zip";
+    } else if (filename.endsWith(".gz")) {
+        return "application/x-gzip";
+    }
+    return "text/plain";
 }
-
 bool handleFileRead(String path) {
     Serial.println("handleFileRead: " + path);
     if (path.endsWith("/")) {
-        path += "index.html";
+        path += "index.htm";
     }
     String contentType = getContentType(path);
     String pathWithGz = path + ".gz";
@@ -187,39 +157,70 @@ void handleFileList() {
     output += "]";
     server.send(200, "text/json", output);
 }
-
-
-String getContentType(String filename) {
-    if (server.hasArg("download")) {
-        return "application/octet-stream";
-    } else if (filename.endsWith(".htm")) {
-        return "text/html";
-    } else if (filename.endsWith(".html")) {
-        return "text/html";
-    } else if (filename.endsWith(".css")) {
-        return "text/css";
-    } else if (filename.endsWith(".js")) {
-        return "application/javascript";
-    } else if (filename.endsWith(".png")) {
-        return "image/png";
-    } else if (filename.endsWith(".gif")) {
-        return "image/gif";
-    } else if (filename.endsWith(".jpg")) {
-        return "image/jpeg";
-    } else if (filename.endsWith(".ico")) {
-        return "image/x-icon";
-    } else if (filename.endsWith(".xml")) {
-        return "text/xml";
-    } else if (filename.endsWith(".pdf")) {
-        return "application/x-pdf";
-    } else if (filename.endsWith(".zip")) {
-        return "application/x-zip";
-    } else if (filename.endsWith(".gz")) {
-        return "application/x-gzip";
+void server_moving()
+{
+    if(server.hasArg("steering") && server.hasArg("speed"))
+    {
+        String s_steering=server.arg("steering"),sa_speed=server.arg("speed");
+        steering=s_steering.toInt();
+        s_speed=sa_speed.toInt();
     }
-    return "text/plain";
+    String json = "{";
+    json += ""+getDistance();
+    json += "}";
+    server.send(200, "text/plain", json);
 }
 
+void website_setup()
+{
+    Serial.print("Website:");
+
+
+
+
+    server.on("/list", HTTP_GET, handleFileList);
+    //load editor
+    server.on("/edit", HTTP_GET, []() {
+        if (!handleFileRead("/edit.htm")) {
+            server.send(404, "text/plain", "FileNotFound");
+        }
+    });
+    //create file
+    server.on("/edit", HTTP_PUT, handleFileCreate);
+    //delete file
+    server.on("/edit", HTTP_DELETE, handleFileDelete);
+
+    server.on("/edit", HTTP_POST, []() {
+        server.send(200, "text/plain", "");
+    }, handleFileUpload);
+
+    server.onNotFound([]() {
+        if (!handleFileRead(server.uri())) {
+            server.send(404, "text/plain", "FileNotFound");
+        }
+    });
+
+    //get heap status, analog input value and all GPIO statuses in one json call
+    server.on("/moving",[](){
+        Serial.println("Server_moving");
+        server_moving();
+    });
+
+    server.on("/all", HTTP_GET, []() {
+        String json = "{";
+        json += "\"heap\":" + String(ESP.getFreeHeap());
+        json += ", \"analog\":" + String(analogRead(A0));
+        json += ", \"gpio\":" + String((uint32_t)(0));
+        json += "}";
+        server.send(200, "text/json", json);
+        json = String();
+    });
+
+    Serial.println(ok);
+
+}
+
+  
 
 
 

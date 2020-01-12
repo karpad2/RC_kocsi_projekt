@@ -6,16 +6,14 @@
 #define RC_KOCSI_SONIC_H
 #include "config.h"
 #include <String.h>
+//#include <Ultrasonic.h>
 
 //Ultrasonic front_ultrasonic(ultrasonic_trigg, front_ultrasonic_echo);
 
-String getFrontSensorStringDistance()
+
+int getDistance()
 {
-  
-    return ""+100;
-}
-double getDistance()
-{
+    //return  front_ultrasonic.read();
     return  100;
 }
 
